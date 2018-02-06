@@ -1,0 +1,51 @@
+
+                        ##############################
+                        #           README           #
+                        #                            #
+                        #   Nume Proiect: Tema1 SD   #
+                        #  Creat de: Apostol Teodor  #
+                        #        Grupa: 312CC        #
+                        #    Deadline: 2.04.2017     #
+                        #                            #
+                        ##############################
+
+        La inceperea programului, acesta deschide fisierele: cel de intrare,
+numit input si cel de iesire numit output. Programul citeste primul numar din
+fisierul de input si in functie de acesta el alege ce tip de planificare va
+utiliza mai departe (printr-un switch):
+ - Pentru First Come First Served: acesta apeleaza functia FCFS de tip void
+ - Pentru Shortest Job First: acesta apeleaza functia SJF de tip void
+ - Pentru Round Robin: Se citeste cuanta de timp (ce nu a fost folosita la
+planificarile anterioare) si apoi se apeleaza functia RR de tip void
+ - Pentru Planificarea pe Prioritati: Se citesc atat cuanta cat si nivelul
+maxim de prioritate posibil si apoi se apeleaza functia PP de asemenea de tip
+void.
+ - Pentru Planificarea cu Prioritati (Bonus)
+        Cele 4+1 functii corespunzatoare planificarilor sunt similare, utilizand
+la randul lor cate o functie pentru fiecare comanda: add, multiple_add,wait,
+event,show si tick. In afara de tick, toate celelalte functii sunt aceleasi
+pentru fiecare planificare. Exista cate un switch in fiecare functie ce necesita
+un tick, iar prin acesta se stabileste ce fel de tick se va folosi, daca
+comanda a fost apelata din FCFS, se va folosi tick_FCFS, cu ajutorul
+parametrului 1, respectiv 2,3,4,5 pentru celelalte planificari cu tick-urile lor.
+        Functia add, va primi buffer-ul ca parametru (acesta fiind sirul de
+caractere permis in enunt), si il va sparge cu ajutorul unui for si unor
+structuri de acelasi tip ca si cele utilizate pentru liste. In numele lor
+salvez cele 3 date si apoi pe cele ce reprezinta durata de viata si prioritatea
+le convertesc in numere intregi folosind functia atoi().
+        Pe un principiu aproape identic functioneaza si functia multiple_add.
+Ea primeste buffer-ul ca parametru. Am ajuns la concluzia ca pentru fiecare
+proces de pe rand la multiple add exista 3 spatii de forma:
+    "ma_P1_1_2_P2_3_5": deci _P_lifetime_prioritate
+de aceea am impartit la 3 si am aflat astfel numarul de procese pe care ulterior
+le-am introdus intr-un for.
+        In functia wait, am luat procesul din Running si l-am introdus in coada
+Waiting, iar in functia evet am cautat procesul respectiv in coada Waitng si
+l-am adaugat in coada Ready.
+        Cum am spus mai devreme, pentru fiecare planificare exista cate un tick
+specific care la randul sau foloseste diferite functii cu nume intuitiv pentru
+rolul pe care il joaca in program.
+        Fiecare tick este apelat atat din functia planificarii cat si din
+functiile ce il necesita la nivel implicit, folosind un switch pentru a decide
+care din functiile tick este necesar.
+    	
